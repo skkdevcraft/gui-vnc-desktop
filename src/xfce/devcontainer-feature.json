@@ -1,0 +1,27 @@
+{
+    "name": "GUI VNC XFCE Desktop",
+    "id": "gui-vnc-xfce-desktop",
+    "version": "1.0.0",
+    "description": "Installs XFCE desktop and VNC server in a devcontainer.",
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "portsAttributes": {
+                "5901": {
+                    "label": "VNC Server",
+                    "onAutoForward": "notify"
+                }
+            }
+        }
+    },
+    "options": {
+        "vncPassword": {
+            "type": "string",
+            "default": "password",
+            "description": "Password to connect to the VNC session."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "hello": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "xfce": {
+                "vncPassword": "testpassword"
+            }
+        },
+        "remoteUser": "vscode"
+    }
+}

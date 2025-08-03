@@ -1,0 +1,10 @@
+{
+    "color_and_hello": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "xfce": {
+                "vncPassword": "purple"
+            }
+        }
+    }
+}
