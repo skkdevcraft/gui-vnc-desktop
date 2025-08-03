@@ -10,7 +10,7 @@ source dev-container-features-test-lib
 
 echo "opa trpoa! $(whoami)"
 ls -l ~/.vnc
-cat ~/.vnc/passwd
+# cat ~/.vnc/passwd
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.

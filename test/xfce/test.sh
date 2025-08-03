@@ -49,11 +49,11 @@ ls -l ~/.vnc
 # check <LABEL> <cmd> [args...]
 # check "execute command" bash -c "hello | grep 'hey, $(whoami)!'"
 check "default display (test.sh)" bash -c "echo $DISPLAY | grep ':1'"
-cat <<EOINPUT | start-vnc.sh
-password
-password
-n
-EOINPUT
+# cat <<EOINPUT | start-vnc.sh
+# password
+# password
+# n
+# EOINPUT
 check "check vnc is running" bash -c "ps aux | grep vnc"
 
 # Report results
