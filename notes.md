@@ -28,7 +28,7 @@ dokcer images
 docker run -it --rm --user node <image-name> /bin/bash
 ```
 
-docker run -it --rm --user node vsc-1754289857366-58d99ea5ab49624bb1fd4a6dcdc20a3e0d4d0bbafb3e60e26d49f130a3572cc2-features /bin/bash
+docker run -it --rm --user node vsc-1754338153456-998973f77269e46004a5c8e0781bed453c8bc1ff45ebb1057336e4c493a46788-features-uid /bin/bash
 
 
 ## Publish

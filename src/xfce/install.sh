@@ -1,20 +1,24 @@
 #!/bin/bash
 set -ex
 
-echo "🔧 Installing XFCE, VNC server..."
+echo "🔧 Installing VNC server..."
 
 export DEBIAN_FRONTEND=noninteractive
 
-# Install XFCE and VNC
+# Install VNC server
 apt-get update && \
 apt-get install -y \
-    xfce4 \
     tigervnc-standalone-server \
-    dbus-x11 x11-xserver-utils \
-    xterm \
-    wget gnupg
+    dbus-x11 x11-xserver-utils
 
-# optional: xfce4-goodies
+# xterm is uses as a minial app to test the VNC server with
+apt-get install -y \
+    xterm
+
+echo "Installing XFCE desktop environment..."
+apt-get install -y \
+    xfce4
+# Optionally: add xfce4-goodies
 
 # Cleanup
 apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -55,7 +59,6 @@ export DISPLAY=:1
 vncserver -kill :1 > /dev/null 2>&1 || true
 vncserver :1 -geometry 1280x800 -depth 24
 EOF
-# tail -f ~/.vnc/*.log
 chmod +x /usr/local/bin/start-vnc.sh
 
 # Create a reminder script that only shows a message if the VNC server is NOT running
