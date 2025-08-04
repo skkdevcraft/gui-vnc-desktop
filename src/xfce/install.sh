@@ -35,8 +35,12 @@ fi
 # VNC xstartup config
 cat <<EOF > "$TARGET_HOME/.vnc/xstartup"
 #!/bin/sh
-[ -f "$HOME/.Xresources" ] && xrdb \$HOME/.Xresources
-startxfce4 &
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+export DISPLAY=:1
+[ -f "\$HOME/.Xresources" ] && xrdb \$HOME/.Xresources
+sleep 1
+startxfce4 >> "\$HOME/.vnc/xstartup.log" 2>&1
 EOF
 chmod +x "$TARGET_HOME/.vnc/xstartup"
 
