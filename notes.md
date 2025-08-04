@@ -15,7 +15,7 @@ export BUILDKIT_PROGRESS=plain
 devcontainer features test --features xfce --remote-user vscode --skip-scenarios --base-image mcr.microsoft.com/devcontainers/base:ubuntu .
 
 # Start the scenario tests
-devcontainer features test --features xfce --skip-scenarios --remote-user node --base-image mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm . --log-level trace
+devcontainer features test --features xfce --remote-user node --base-image mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm . --log-level trace
 ```
 
 ## Docker

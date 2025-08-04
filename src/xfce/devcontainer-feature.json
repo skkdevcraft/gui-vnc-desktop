@@ -19,7 +19,7 @@
         "vncPassword": {
             "type": "string",
             "default": "password",
-            "description": "Password to connect to the VNC session."
+            "description": "Password to connect to the VNC session. If left empty, you will be asked to provide it the first time you start the VNC server."
         }
     },
     "installsAfter": [

@@ -26,9 +26,9 @@ TARGET_HOME="$(eval echo "~$TARGET_USER")"
 echo "I am $(whoami)"
 
 mkdir -p "$TARGET_HOME/.vnc"
-if [ -n "${_BUILD_ARG_VNCPASSWORD}" ]; then
+if [ -n "${VNCPASSWORD}" ]; then
     # Set VNC password
-    echo "${_BUILD_ARG_VNCPASSWORD}" | vncpasswd -f > "$TARGET_HOME/.vnc/passwd"
+    echo "${VNCPASSWORD}" | vncpasswd -f > "$TARGET_HOME/.vnc/passwd"
     chmod 600 "$TARGET_HOME/.vnc/passwd"
 else
     echo "A password will have to be provided the first time the server is started."

@@ -14,10 +14,10 @@ ls -l ~/.vnc
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "default display (typescript.sh)" bash -c "echo $DISPLAY | grep ':1'"
+check "default display (with-password.sh)" bash -c "echo $DISPLAY | grep ':1'"
 
-# Start the VNC server
-echo -e "password\npassword\nn" | tigervncserver -xstartup /usr/bin/xterm
+# Start the VNC server -- should not ask for password
+tigervncserver -xstartup /usr/bin/xterm
 check "check Xtigervnc was started (1)" bash -c "ps aux | grep Xtigervnc"
 
 # Start the VNC server with XFCE
