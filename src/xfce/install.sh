@@ -8,11 +8,13 @@ export DEBIAN_FRONTEND=noninteractive
 # Install XFCE and VNC
 apt-get update && \
 apt-get install -y \
-    xfce4 xfce4-goodies \
+    xfce4 \
     tigervnc-standalone-server \
     dbus-x11 x11-xserver-utils \
     xterm \
     wget gnupg
+
+# optional: xfce4-goodies
 
 # Cleanup
 apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -21,7 +23,7 @@ apt-get clean && rm -rf /var/lib/apt/lists/*
 TARGET_USER="${_REMOTE_USER:-node}"
 TARGET_HOME="$(eval echo "~$TARGET_USER")"
 
-echo "opa trpoa! $(whoami)"
+echo "I am $(whoami)"
 
 mkdir -p "$TARGET_HOME/.vnc"
 if [ -n "${_BUILD_ARG_VNCPASSWORD}" ]; then
