@@ -1,7 +1,7 @@
 #!/bin/bash
-set -e
+set -ex
 
-echo "🔧 Installing XFCE, VNC server, Chrome, and Firefox..."
+echo "🔧 Installing XFCE, VNC server..."
 
 export DEBIAN_FRONTEND=noninteractive
 
@@ -11,17 +11,8 @@ apt-get install -y \
     xfce4 xfce4-goodies \
     tigervnc-standalone-server \
     dbus-x11 x11-xserver-utils \
+    xterm \
     wget gnupg
-
-# (example) Install Firefox
-# apt-get update && \
-# apt-get install -y \
-#     firefox-esr
-
-# (example) Install Google Chrome
-# wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /etc/apt/trusted.gpg.d/google-chrome.gpg
-# echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
-# apt-get update && apt-get install -y google-chrome-stable
 
 # Cleanup
 apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -30,8 +21,9 @@ apt-get clean && rm -rf /var/lib/apt/lists/*
 TARGET_USER="${_REMOTE_USER:-node}"
 TARGET_HOME="$(eval echo "~$TARGET_USER")"
 
+echo "opa trpoa! $(whoami)"
+
 mkdir -p "$TARGET_HOME/.vnc"
-chown -R "$TARGET_USER:$TARGET_USER" "$TARGET_HOME/.vnc"
 if [ -n "${_BUILD_ARG_VNCPASSWORD}" ]; then
     # Set VNC password
     echo "${_BUILD_ARG_VNCPASSWORD}" | vncpasswd -f > "$TARGET_HOME/.vnc/passwd"
@@ -43,10 +35,12 @@ fi
 # VNC xstartup config
 cat <<EOF > "$TARGET_HOME/.vnc/xstartup"
 #!/bin/sh
-xrdb \$HOME/.Xresources
+[ -f "$HOME/.Xresources" ] && xrdb \$HOME/.Xresources
 startxfce4 &
 EOF
 chmod +x "$TARGET_HOME/.vnc/xstartup"
+
+chown -R "$TARGET_USER:$TARGET_USER" "$TARGET_HOME/.vnc"
 
 # Startup script
 cat <<'EOF' > /usr/local/bin/start-vnc.sh

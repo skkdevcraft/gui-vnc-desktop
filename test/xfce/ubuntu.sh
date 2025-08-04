@@ -14,9 +14,11 @@ ls -l ~/.vnc
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "default display (hello.sh)" bash -c "echo $DISPLAY | grep ':1'"
-# start-vnc.sh
-check "check vnc is running" bash -c "ps aux | grep vnc"
+check "default display (ubuntu.sh)" bash -c "echo $DISPLAY | grep ':1'"
+
+# Start the VNC server
+echo -e "password\npassword\nn" | tigervncserver -xstartup /usr/bin/xterm
+check "check Xtigervnc was started" bash -c "ps aux | grep Xtigervnc"
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.

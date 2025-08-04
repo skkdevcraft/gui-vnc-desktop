@@ -15,8 +15,7 @@ jobs:
         features:
           - xfce
         baseImage:
-          - debian:latest
-          - ubuntu:latest
+          - mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm
           - mcr.microsoft.com/devcontainers/base:ubuntu
     steps:
       - uses: actions/checkout@v4

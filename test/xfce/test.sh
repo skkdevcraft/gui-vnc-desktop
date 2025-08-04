@@ -49,12 +49,13 @@ ls -l ~/.vnc
 # check <LABEL> <cmd> [args...]
 # check "execute command" bash -c "hello | grep 'hey, $(whoami)!'"
 check "default display (test.sh)" bash -c "echo $DISPLAY | grep ':1'"
-# cat <<EOINPUT | start-vnc.sh
-# password
-# password
-# n
-# EOINPUT
-check "check vnc is running" bash -c "ps aux | grep vnc"
+
+# Start the VNC server -- by default no password is provided and the user have to type their own
+# echo -e "password\npassword\nn" | start-vnc.sh > output.txt
+
+# Start the VNC server
+echo -e "password\npassword\nn" | tigervncserver -xstartup /usr/bin/xterm
+check "check Xtigervnc was started" bash -c "ps aux | grep Xtigervnc"
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.
