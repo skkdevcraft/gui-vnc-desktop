@@ -1,5 +1,5 @@
 
-# GUI VNC XFCE Desktop (gui-vnc-desktop-xfce)
+# GUI VNC XFCE Desktop (xfce)
 
 Installs XFCE desktop and VNC server in a devcontainer.
 
@@ -7,7 +7,7 @@ Installs XFCE desktop and VNC server in a devcontainer.
 
 ```json
 "features": {
-    "ghcr.io/skkdevcraft/gui-vnc-desktop/gui-vnc-desktop-xfce:1": {}
+    "ghcr.io/skkdevcraft/gui-vnc-desktop/xfce:1": {}
 }
 ```
 
@@ -23,4 +23,4 @@ Further notes
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/skkdevcraft/gui-vnc-desktop/blob/main/src/xfce/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
