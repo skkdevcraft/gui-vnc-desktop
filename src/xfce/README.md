@@ -23,4 +23,4 @@ Further notes
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/skkdevcraft/gui-vnc-desktop/blob/main/src/xfce/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

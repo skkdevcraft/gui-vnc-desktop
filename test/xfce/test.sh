@@ -53,9 +53,13 @@ check "default display (test.sh)" bash -c "echo $DISPLAY | grep ':1'"
 # Start the VNC server -- by default no password is provided and the user have to type their own
 # echo -e "password\npassword\nn" | start-vnc.sh > output.txt
 
-# Start the VNC server
+# Start the VNC server with simple app
 echo -e "password\npassword\nn" | tigervncserver -xstartup /usr/bin/xterm
-check "check Xtigervnc was started" bash -c "ps aux | grep Xtigervnc"
+check "check Xtigervnc was started (1)" bash -c "ps aux | grep Xtigervnc"
+
+# Start the VNC server with XFCE
+start-vnc.sh
+check "check Xtigervnc was started (2)" bash -c "ps aux | grep Xtigervnc"
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.
