@@ -27,3 +27,10 @@ docker run -it --rm --user node <image-name> /bin/bash
 ```
 
 docker run -it --rm --user node vsc-1754289857366-58d99ea5ab49624bb1fd4a6dcdc20a3e0d4d0bbafb3e60e26d49f130a3572cc2-features /bin/bash
+
+
+## Publish
+
+```bash
+devcontainer features publish -r ghcr.io -n skkdevcraft/gui-vnc-desktop ./src
+```
