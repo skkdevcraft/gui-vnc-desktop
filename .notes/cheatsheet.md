@@ -1,3 +1,5 @@
+A collection of useful commands.
+
 ## Generate README.md
 
 ```bash
@@ -26,13 +28,4 @@ docker image prune -a
 dokcer images
 # Start an interactive session with a test image
 docker run -it --rm --user node <image-name> /bin/bash
-```
-
-docker run -it --rm --user node vsc-1754338153456-998973f77269e46004a5c8e0781bed453c8bc1ff45ebb1057336e4c493a46788-features-uid /bin/bash
-
-
-## Publish
-
-```bash
-devcontainer features publish -r ghcr.io -n skkdevcraft/gui-vnc-desktop ./src
 ```
