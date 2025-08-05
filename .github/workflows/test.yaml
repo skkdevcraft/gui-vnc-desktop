@@ -18,7 +18,7 @@ jobs:
           - mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm
           - mcr.microsoft.com/devcontainers/base:ubuntu
           - ubuntu:latest
-          - debuan:latest
+          - debian:latest
     steps:
       - uses: actions/checkout@v4
 
