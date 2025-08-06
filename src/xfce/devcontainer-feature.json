@@ -1,7 +1,7 @@
 {
     "name": "GUI VNC XFCE Desktop",
     "id": "xfce",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Installs XFCE desktop and VNC server in a devcontainer.",
     "documentationURL": "https://github.com/skkdevcraft/gui-vnc-desktop",
     "customizations": {

@@ -21,7 +21,7 @@ tigervncserver -xstartup /usr/bin/xterm
 check "check Xtigervnc was started (1)" bash -c "ps aux | grep Xtigervnc"
 
 # Start the VNC server with XFCE
-start-vnc.sh
+start-vnc
 check "check Xtigervnc was started (2)" bash -c "ps aux | grep Xtigervnc"
 
 
