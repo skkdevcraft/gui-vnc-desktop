@@ -4,6 +4,8 @@ This repository provides a [Dev Container Feature](https://containers.dev/implem
 
 It's useful for tasks like running headed Playwright tests or developing GUI applications directly within the isolated environment of a dev container.
 
+[![Watch the video](https://img.youtube.com/vi/YNFJA4rjPhw/maxresdefault.jpg)](https://youtu.be/YNFJA4rjPhw)
+
 ### XFCE Desktop Environment
 
 This Feature installs the XFCE desktop environment, a lightweight option that does not require a dedicated GPU.
