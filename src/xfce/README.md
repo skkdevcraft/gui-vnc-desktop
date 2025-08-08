@@ -15,7 +15,7 @@ Installs XFCE desktop and VNC server in a devcontainer.
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| vncPassword | Password to connect to the VNC session. If left empty, you will be asked to provide it the first time you start the VNC server. | string | password |
+| vncPassword | Password to connect to the VNC session. If left empty, you will be asked to provide it the first time you start the VNC server. | string | - |
 
 ## How to Use
 
