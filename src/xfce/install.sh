@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 
-echo ":: Installing VNC server..."
+echo "🔧 Installing VNC server..."
 
 export DEBIAN_FRONTEND=noninteractive
 
@@ -53,26 +53,19 @@ chmod +x "$TARGET_HOME/.vnc/xstartup"
 chown -R "$TARGET_USER:$TARGET_USER" "$TARGET_HOME/.vnc"
 
 # Startup script
-cat <<'EOF' > /usr/local/bin/start-vnc
+cat <<'EOF' > /usr/local/bin/start-vnc.sh
 #!/bin/bash
 export DISPLAY=:1
 vncserver -kill :1 > /dev/null 2>&1 || true
 vncserver :1 -geometry 1280x800 -depth 24
 EOF
-chmod +x /usr/local/bin/start-vnc
-
-# Stop script
-cat <<'EOF' > /usr/local/bin/stop-vnc
-#!/bin/bash
-vncserver -kill :1 > /dev/null 2>&1 || true
-EOF
-chmod +x /usr/local/bin/stop-vnc
+chmod +x /usr/local/bin/start-vnc.sh
 
 # Create a reminder script that only shows a message if the VNC server is NOT running
 cat <<'EOF' > /etc/profile.d/vnc-reminder.sh
 #!/bin/bash
 if ! pgrep Xtigervnc > /dev/null 2>&1; then
-  echo "Reminder: Run `start-vnc` to start the VNC desktop session (port 5901)."
+  echo "👉 Reminder: Run start-vnc.sh to start the VNC desktop session (port 5901)."
 fi
 EOF
 
@@ -80,10 +73,10 @@ chmod +x /etc/profile.d/vnc-reminder.sh
 
 # Call it from .bashrc to ensure it runs in interactive shells
 echo '/etc/profile.d/vnc-reminder.sh' >> "$TARGET_HOME/.bashrc"
-echo ":: VNC reminder added to $TARGET_HOME/.bashrc"
+echo "✅ VNC reminder added to $TARGET_HOME/.bashrc"
 
 # Set DISPLAY globally
 echo 'export DISPLAY=:1' >> /etc/profile.d/display.sh
 
-echo ":: GUI environment installed and ready."
+echo "✅ GUI environment installed and ready."
 

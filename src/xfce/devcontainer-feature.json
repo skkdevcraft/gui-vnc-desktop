@@ -1,7 +1,7 @@
 {
     "name": "GUI VNC XFCE Desktop",
     "id": "xfce",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Installs XFCE desktop and VNC server in a devcontainer.",
     "documentationURL": "https://github.com/skkdevcraft/gui-vnc-desktop",
     "customizations": {
@@ -18,7 +18,7 @@
     "options": {
         "vncPassword": {
             "type": "string",
-            "default": "password",
+            "default": "",
             "description": "Password to connect to the VNC session. If left empty, you will be asked to provide it the first time you start the VNC server."
         }
     },

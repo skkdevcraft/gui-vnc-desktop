@@ -16,6 +16,9 @@ ls -l ~/.vnc
 # The 'check' command comes from the dev-container-features-test-lib.
 check "default display (empty-password.sh)" bash -c "echo $DISPLAY | grep ':1'"
 
+# Check the VNC server is not running
+check "check Xtigervnc was not started automatically" bash -c "! pgrep -x Xtigervnc"
+
 # Start the VNC server -- should ask for password
 echo -e "password\npassword\nn" | tigervncserver -xstartup /usr/bin/xterm
 check "check Xtigervnc was started (1)" bash -c "ps aux | grep Xtigervnc"

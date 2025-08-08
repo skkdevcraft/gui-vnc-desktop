@@ -27,10 +27,10 @@ To use it, add the Feature to your `devcontainer.json`:
 **To start the GUI session:**
 
 1.  Once your dev container is running, open a terminal inside it.
-2.  Run the `start-vnc` script.
+2.  Run the `start-vnc.sh` script.
 
     ```bash
-    $ start-vnc
+    $ start-vnc.sh
 
     New Xtigervnc server 'ad88e91d2ab4:1 (node)' on port 5901 for display :1.
     Use xtigervncviewer -SecurityTypes VncAuth -passwd /tmp/tigervnc.gYIYWn/passwd :1 to connect to the VNC server.
@@ -41,7 +41,7 @@ To use it, add the Feature to your `devcontainer.json`:
 
 A VNC server provides remote access to the container, so it is important to ensure that access is restricted. This feature helps secure the VNC connection in the following ways:
 
-- **On-Demand Service:** The VNC server is only started when you explicitly run the `start-vnc` script.
+- **On-Demand Service:** The VNC server is only started when you explicitly run the `start-vnc.sh` script.
 - **Password Protection:** The server is always protected by a password.
 - **Local Access:** By default, VS Code forwards ports to `localhost`, meaning the VNC server is only accessible from your local machine.
 - **Host Firewall:** For an additional layer of security, ensure that your host machine's firewall is enabled and properly configured.
